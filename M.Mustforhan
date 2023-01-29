@@ -1,0 +1,162 @@
+Artık Telefonundaki Şifrelenmeyen Dosyalar ve Fotoğraflar Bizde.
+bilgi almak ve Silinmesini İstiyor isen lütfen bizimle paylaş iletişim geç.
+~MSTFORHAN~
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+” başlat ” tan ” çalıştır ” a girin ve ” cmd ” yazın enterlayın aşağıdaki komutları deneyin. 
+
+ping 192.168.0.2 ===> ip deki diger bilgisayara ufak veri paketleri gönderip, alarak baglantiyi test eder
+
+ping client98
+
+ping -a 192.168.0.2 ===> ip deki diger bilgisayara ufak veri paketleri gönderip, alarak baglantiyi test eder. “-a” parametresi ile ipdeki bilgisayarin adresi görüntülenir.
+
+ping -a -n 20 192.168.0.2 ===> -n parametresinin yanindaki deger kadar veri paketleri gönderilirilerek test edilir. 
+
+pathping ===> bu komut sayesinde routerlar üzeriden geçen verinin kayba uğayıp uğamadığı kontrol edilir. 
+
+ipconfig ===> bilgisayarin agdaki ip adresini gösterir.
+
+ipconfig /all ===> bilgisayarin agdaki ip adresini ve bir çok ekstrayi gösterir.
+
+ipconfig /all >egemen.txt ===> dökülen tüm bilgiyi egemen.txt dosyası içine atar.
+
+ipconfig /release ===> bilgisayarin agdaki ipsini birakir
+
+ipconfig /renew ===> bilgisayarin agdaki ipsini yeniler. yenileme islemi sirasinda ilk önce “release” , sonra “renew” islemi uygulanir
+
+ipconfig /registerdns ===> bilgisayarı adını ve ipsini DNS e kaydetmek için kullanılır.
+
+ipconfig /flushdns ===> Dns clientların cache belleklerinde tuttukları isim ve ip adres eşleşmelerine ait bilgileri siler,Cache belleği boşaltır.(Sorun Çözmek için kullanılır)
+
+ipconfig /displaydns ===> Eğer kullandığınız bilgisayar aynı zamanda bir DNS client’ı ise, DNS Cache belleğinde bulunan IP adresleri ve onlara ait olan DNS isimlerinin gösterilmesini sağlar. 
+
+arp -a ===> cache deki ip çözümlesini gösterir. cache eger 2 dk içinde yeni bir ip çözümlemesi olmazsa kendini temizler. eger 2 dk içinde yenilenirse 10 dk daha tutulur.
+
+arp -a 192.168.0.2 ===>
+
+arp -s 192.168.0.2 00-02-44-12-24-ad ===> ip çözümlemesi içinde, ip si verilen bilgisayarin “mac” adresini sabitler. cache de sürekli kalir, silinmez.
+
+-
+
+net use ===> bilgisayardaki map leri gösterir.
+
+net use h: \\client98\c ===> client 98 bilgisayarin C sini H olarak map eder.
+
+net use h: \\192.168.0.2\c$ ===> ipsi verilen bilgisayarin gizli admin sharini h olarak map eder.
+
+net use /delete h: ===> h mapped drive i siler.
+
+net use lpt1: \\server\ibm /persistent ===> kalıcı printer bağlantısı sağlar. 
+
+netstat ===> bilgisayara yapilan baglantilari gösterir. 
+
+nbtstat ===> TCP/IP üzerinde NetBIOS API ile ilgili verilerin gösterilmesini sağlar.Netbios isim tablosunun hem kullandığınız(local) bilgisayar için hemde network üstündeki diğer bilgisayarlar(remote) için gösterilmesini sağlar.
+
+nbtstat -RR ===> Eğer komutu bir WINS client üzerinde çalıştırıyorsanız, WINS Client’ı WINS server üzerinde yer alan kendine it kayıtları önce silecek; sonra tekrar kayıt ettirecektir.(Sorun çözmek için kullanılır)
+
+(daha fazla bilgi için Murat Bayraktar ın MCSE kitabına bak) 
+
+tracert 131.107.10.1 ===> Bu komut sayesinde, farklı TTL süreleri kullanılarak aynı hedefe ICMP paketleri gönderilir.Bu sayede, bilgisayarınızdan bir başka hedef noktaya ulaşırken, paketlerimizin hangi yolları takip ettiği kontrol edilir.
+
+Bu komut ile hedef bilgisayar ve sizin aranızdaki en yakın ve en kısa yolu belirleyen router ların bir listesi gösterilmiş olur.
+
+tracert [-d][-h Maksimum Hop sayısı][-J Hot Listesi][-w Timeout Süresi][Hedef isim]
+
+(daha fazla bilgi için Murat Bayraktar ın MCSE kitabına bak) 
+
+route print ===> Routing table döker. 
+
+net helpmsg 52 ===> hata kod larının açıklamasını döker. 
+
+net view ===>
+
+net view \\192.168.0.2 ===> ip si yazilmis bilgisayarin paylastirilmis nesnelerini gösterir.
+
+net view \\client98 ===> ismi yazilmis bilgisayarin paylastirilmis nesnelerini gösterir.
+
+net share ===> bilgisayardaki paylaştırılmış sürücü ve klasörleri gösterir.
+
+net share hoop=f:\hoop ===> f sürücüsünde oluşturduğumuz hoop klasörünü yine aynı isimle share eder. 
+
+hostname ===> bilgisayarin ismini gösterir.
+
+%username% ===> bilgisayari logon olan kullanici ismidir.
+
+%systemroot% ===> isletim sisteminin kuruldugu klasördür.
+
+%userprofile% ===> 
+
+net time \\192.168.0.2 ===> ip si girilmis olan bilgisayarin tarih ve saatini gösterir.
+
+net time \\client98 ===> ismi girilmis olan bilgisayarin tarih ve saatini gösterir.
+
+net time \\client98 /set /y ===> ismi verilmis bilgisayarin tarih ve saatine göre, kullandigimiz makineyi ayarlar. 
+
+convert c: /fs:ntfs ===> C sürücüsünü NTFS sisteme dönüstürür. Içindeki bilgiler silinmez. 
+
+net help command ===> net komutuna bagli tüm komutlarin açiklamasini görüntüler. 
+
+secedit /*******policy user_policy ===> Poliçelerde yapılan değişikliklerin kullanıcı bazında hemen devreye girmesi için kullanılır
+
+secedit /*******policy machine_policy ===> Poliçelerde yapılan değişikliklerin bilgisayar bazında hemen devreye girmesi için kullanılır
+
+secedit /*******policy user_policy /enforce ===> Poliçe değişikliklerinin hemen devreye girmesi için zorlar.
+
+secedit /*******policy machine_policy /enforce ==> Poliçe değişikliklerinin hemen devreye girmesi için zorlar. 
+
+nslookup ===> DNS in doğru düzgün çalışıp çalışmadığını kontrol eder. 
+
+nslookup komutu girilir ve ardından:
+
+ls -t SRV mcseankara.com (SRV kayıtlarını kotrol eder)
+
+ls -t SRV mcseankara.com > egemen.txt (SRV kayıtlarını egemen.txt dosyasının içine atar ve bu 24 kayıt olmalı)
+
+192.168.0.1 (reverse lookup ın çalışıp çalışmadığını kontrol eder)
+
+egemen.mcseankara.com (forward lookup ın çalışıp çalışmadığını kontrol eder)
+
+exit ile çıkılır. 
+
+dcpromo ===>active directory manuel kurulumu için kullanılır
+
+dcpromo /answer:c:\promotec.txt ===>active directory otomatik kurulumu için kullanılır 
+
+csvde -i -f ekle.txt ===> active drirectory içine ekle.txt içinden sadece kullanıcı ekler (virgül ile ayrılmış)
+
+ldifde -i -f ekle.txt ===> active drirectory içine ekle.txt içinden kullanıcı ekler, siler, düzeltir (satır ile ayrılmış)
+
+csvde -f egemen.txt ===> active directory kaydını egemen.txt dosyasına virgülle ayrılmış şekilde döker
+
+ldifde -f egemen.txt ===> active directory kaydını egemen.txt dosyasına satır satır ayrılmış şekilde döker 
+
+jetpack dhcp.mdb temp.mdb ===> DHCP veritabanını indexler, düzenler, boş astırları kaldırır, ufaltır,(komutu kullanmadan önce DHCP servisini durdurmalısınız)
+
+netsh ===> Bu komut sayesinde DHCP,WINS,DNS serverları komut satırından yönetebiliyorsunuz.
+
+netsh> help ===> nasıl kullanacağınız hakkında buradan bilgi alabilirsiniz 
+
+terminal server yüklü bilgisayarda mode “excute mode” olarak değişir. Program yükletmez. 
+
+run > change user /install (install mode devreye girer)
+
+run > change user /execute (execute mode devreye girer) 
+
+Arkadaşlar dediğim gibi 65500 kb lık bir hız gerekli toplamda vede en az 6-7 kişi gerekli vede eğer internet seviyeniz bu sayının altında ise sadece site aşırı derecede yavaşlar vede büyük sitelere ping atarsanız IP adresinizden dava açabilirler o yüzden atmamanızı tavsiye ederim eğer hızınınz belirttiğim rakamın üstünde ise st kapanır ve skor değişir. 
+
+ŞİMDİDEN KOLAY GELSİN.
